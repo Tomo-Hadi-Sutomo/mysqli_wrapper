@@ -1,4 +1,4 @@
-<?php
+<?php 
 if (!is_callable('mysql_connect')) {
 	function mysql_connect($server = '', $user = '', $pass = '', $arg = false, $flag = 0, $persistente = '') {
 		if (func_num_args() === 0 && $_SERVER['MYSQL_CONN']) foreach ($_SERVER['MYSQL_CONN'] as $hash => &$conns) return $conns;
