@@ -1,6 +1,8 @@
 # mysqli_wrapper
 Mysqli Wrapper untuk PHP lama.
-Mengatasi deprecated mysql functions pada PHP > 5.5.0 dan removed pada PHP > 7.0.0  Dengan wrapper ini, maka Anda tetap bisa menggunakan mysql function yang telah deprecated pada lingkungan PHP > 5.5.0.0 , maupun removed pada lingkungan PHP 7.0.0 
+Mengatasi deprecated mysql functions pada PHP > 5.5.0 dan removed pada PHP > 7.0.0  
+Dengan wrapper ini, maka Anda tetap bisa menggunakan mysql function 
+yang telah deprecated pada lingkungan PHP > 5.5.0.0 dan removed pada lingkungan PHP 7.0.0 
 Caranya tinggal includkan saja file ini pada file koneksi (.php) Anda.
 ```
 //wajib require atau include file mysql.php
