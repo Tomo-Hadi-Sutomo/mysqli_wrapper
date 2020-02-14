@@ -1,4 +1,4 @@
-<?php 
+<?php
 if (!is_callable('mysql_connect')) {
 	function mysql_connect($server = '', $user = '', $pass = '', $arg = false, $flag = 0, $persistente = '') {
 		if (func_num_args() === 0 && $_SERVER['MYSQL_CONN']) foreach ($_SERVER['MYSQL_CONN'] as $hash => &$conns) return $conns;
@@ -10,14 +10,14 @@ if (!is_callable('mysql_connect')) {
 		if (!$pass) $pass = ini_get("mysqli.default_pw");
 		$link = mysqli_init();
 		$socket = null;
-		if (strpos($server, ':') !== false) list($server, $porta) = explode(':', $server, 2); else $porta = ini_get("mysqli.default_port");
+		if (strpos($server, ':') !== false) list($server, $port) = explode(':', $server, 2); else $port = ini_get("mysqli.default_port");
 		if (!$server) $server = 'localhost';
-		if (!is_numeric($porta)) {
-			$socket = $porta;
-			$porta = null;
+		if (!is_numeric($port)) {
+			$socket = $port;
+			$port = null;
 		}
-		if (!$porta && $porta !== null) $porta = 3306;
-		$ok = @mysqli_real_connect($link, $persistente . $server, $user, $pass, '', $porta, $socket, $flag);
+		if (!$port && $port !== null) $port = 3306;
+		$ok = @mysqli_real_connect($link, $persistente . $server, $user, $pass, '', $port, $socket, $flag);
 		if (!$ok) return false;
 		$_SERVER['MYSQL_CONN'][$hash] =& $link;
 		return $link;
